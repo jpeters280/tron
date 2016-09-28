@@ -34,12 +34,9 @@ Vector.add = function(v1, v2) {
 
 var Player = function() {
   this.pos = new Vector(~~(Math.random()*(w-360)) + 50, ~~(Math.random()*(h-50)) + 50)
-  //this.c = '#B60C48',//'#' + Math.floor(Math.random()*16777215).toString(16);
   this.dir = Vector.right;
   this.tail = [this.pos, this.pos];
   socket.emit('created', player);
-  // ctx.fillStyle = this.c;
-  // ctx.strokeStyle = this.c;
 };
 
 var player = new Player();
@@ -117,13 +114,11 @@ document.body.addEventListener("keydown", function (e) {
 
 window.addEventListener('blur', function() {
   pause = true;
-  // socket.emit('dead', 'blur');
   reset();
 })
 
 window.addEventListener('focus', function() {
   pause = false;
-  //player = new Player();
 })
 
 
