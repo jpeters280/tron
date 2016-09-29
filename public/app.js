@@ -10,6 +10,7 @@ var enemy = {};
 var enemyID;
 var pause = false;
 
+
 socket.on('re', function(arr) {
   delete arr[player.id];
   if (arr) {
@@ -55,7 +56,7 @@ socket.on('sync', function() {
 function reset(){
   player = new Player();
   key = 39;
-  socket.emit('dead', 'T_T');
+  socket.emit('he dead', 'wa wa wa');
 }
 
 
@@ -126,7 +127,7 @@ function grid(){
   for(var i = 0; i <= w; i+=30){
     ctx.save();
     ctx.beginPath();
-    ctx.strokeStyle = "blue";
+    ctx.strokeStyle = "transparent";
     ctx.moveTo(i, 0);
     ctx.lineTo(i, h);
     ctx.moveTo(0, i);
@@ -186,7 +187,7 @@ if (!pause) {
 
         enemy[enemyID[i]].pos = Vector.add(enemy[enemyID[i]].pos, enemy[enemyID[i]].dir);
         enemy[enemyID[i]].tail[enemy[enemyID[i]].tail.length - 1] = enemy[enemyID[i]].pos;
-        line(enemy[enemyID[i]].tail, 'black');
+        line(enemy[enemyID[i]].tail, 'red');
       }
     }
   }
