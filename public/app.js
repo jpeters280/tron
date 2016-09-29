@@ -5,7 +5,7 @@ var w = 1300;
 var h = 700;
 c.width = w;
 c.height = h;
-var speed = 16;
+var speed = 12;
 var enemy = {};
 var enemyID;
 var pause = false;
